@@ -30,7 +30,7 @@ public class EmployeeService {
 		ResponseVO vo = new ResponseVO();
 		Employee emp =  employeeRepo.findById(id).get();
 		Department department = restTemplate.getForObject(
-				"http://localhost:9001/departments/" + emp.getDepartmentId(), 
+				"http://department-service/departments/" + emp.getDepartmentId(), 
 				Department.class);
 		vo.setEmployee(emp);
 		vo.setDepartment(department);
